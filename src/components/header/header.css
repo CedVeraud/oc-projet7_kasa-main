@@ -1,0 +1,13 @@
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1240px;
+    height: 68px;
+    margin: 50px auto;
+  }
+.header-logo {
+    height: 47px;
+    width: auto;
+}

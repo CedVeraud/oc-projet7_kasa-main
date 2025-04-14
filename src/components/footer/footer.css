@@ -1,0 +1,17 @@
+.footer_container{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 66px 0 30px;
+}  
+.footer_container-logo {
+    height: 40px;
+    width: auto;
+    filter: brightness(100);
+    margin-bottom: 40px;
+}  
+.footer_container-credits {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+}
