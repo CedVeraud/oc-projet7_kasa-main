@@ -12,7 +12,7 @@ function Header() {
                 <Link to="/">
                     <img
                         src={HeaderLogo}
-                        className="header-logo"
+                        className="header_container-logo"
                         alt="logo Kasa"
                     />
                 </Link>

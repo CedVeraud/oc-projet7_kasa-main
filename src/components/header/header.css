@@ -5,9 +5,9 @@
     width: 100%;
     max-width: 1240px;
     height: 68px;
-    margin: 50px auto;
+    margin: 48px auto;
   }
-.header-logo {
-    height: 47px;
+.header_container-logo {
+    height: 68px;
     width: auto;
 }
