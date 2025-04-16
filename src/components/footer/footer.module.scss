@@ -1,9 +1,9 @@
-@import '../../style/variables.scss';
+@use '../../style/variables';
 
 .footer {
   &_container{
-    background-color: $primary-txt-color;
-    color: $secondary-txt-color;
+    background-color: variables.$primary-txt-color;
+    color: variables.$secondary-txt-color;
     text-align: center;
     padding: 66px 0 30px;
   }

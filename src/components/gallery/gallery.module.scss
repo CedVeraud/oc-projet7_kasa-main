@@ -1,7 +1,7 @@
-@import '../../style/variables.scss';
+@use '../../style/variables';
 
 .gallery{
-    background-color: $secondary-bg;
+    background-color: variables.$secondary-bg;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
