@@ -1,8 +1,8 @@
-import './gallery.css'
+import Styles from './gallery.module.scss'
 
 function Gallery() {
     return (
-        <div className="gallery">
+        <div className={Styles.gallery}>
 
         </div>
     )

@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import 'variables';
+
+/***  GLOBAL RULES  ***/
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  padding: 100px 0;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: $primary-txt-color;
+}

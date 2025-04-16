@@ -10,14 +10,13 @@ import Error from './pages/Error/404';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="logement" element={<Logement />} />
         <Route path="*" element={<Error />} />
-
       </Routes>
       <Footer />
     </div>

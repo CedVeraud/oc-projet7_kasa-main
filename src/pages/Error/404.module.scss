@@ -1,0 +1,30 @@
+@import '../../style/variables.scss';
+
+.error {
+    max-width: 1240px;
+    margin: 0 auto;
+    text-align: center;
+
+    &_title {
+        font-size: 288px;
+        font-weight: 700;
+        color: $primary-color;
+        margin: 0;
+        padding: 40px 0 100px;
+    }
+
+    &_text {
+        font-size: 36px;
+        font-weight: 500;
+        color: $primary-color;
+        margin-top: 0;
+        margin-bottom: 120px;
+    }
+    &_link {
+        display: block;
+        margin: 140px 0;
+        font-size: 18px;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+}

@@ -1,15 +1,15 @@
 import { NavLink } from 'react-router-dom'
 
-import './nav.css'
+import Styles from './nav.module.scss'
 
 function HeaderNav() {
   let activeNavLink = {
     textDecoration: 'underline',
   }
   return (
-    <nav className="header_nav">
+    <nav className={Styles.nav}>
       <ul>
-        <li className="header_nav-link">
+        <li className={Styles.nav_link}>
           <NavLink
             to="/"
             style={({ isActive }) => (isActive ? activeNavLink : undefined)}
@@ -17,7 +17,7 @@ function HeaderNav() {
             Accueil
           </NavLink>
         </li>
-        <li className="header_nav-link">
+        <li className={Styles.nav_link}>
           <NavLink
             to="/about"
             style={({ isActive }) => (isActive ? activeNavLink : undefined)}

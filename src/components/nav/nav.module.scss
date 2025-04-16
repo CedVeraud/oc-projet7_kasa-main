@@ -1,12 +1,17 @@
-.header_nav ul {
+@import '../../style/variables.scss';
+
+.nav {  
+  > ul {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-.header_nav-link {
+  }
+
+  &_link {
     font-size: 24px;
     font-weight: 500;
     margin-left: 57px;
+  }
 }

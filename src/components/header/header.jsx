@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom'
 import HeaderLogo from '../../assets/logo/kasalogo.svg'
 import HeaderNav from '../nav/nav'
 
-import './header.css'
+import Styles from './header.module.scss'
 
 function Header() {
     return (
-        <header className="header">
-            <div className="header_container">
+        <header className={Styles.header}>
+            <div className={Styles.header_container}>
                 <Link to="/">
                     <img
                         src={HeaderLogo}
-                        className="header_container-logo"
+                        className={Styles.header_logo}
                         alt="logo Kasa"
                     />
                 </Link>

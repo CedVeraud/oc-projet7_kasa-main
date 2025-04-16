@@ -1,4 +1,7 @@
-.header_container {
+@import '../../style/variables.scss';
+
+.header{
+  &_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,7 +10,9 @@
     height: 68px;
     margin: 48px auto;
   }
-.header_container-logo {
+
+  &_logo{
     height: 68px;
     width: auto;
+  }
 }
