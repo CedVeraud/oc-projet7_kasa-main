@@ -5,10 +5,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 1240px;
     height: 68px;
     margin: 48px auto;
+    padding: 0 20px;
+      
+  @media only screen and (min-width: 1280px) {
+    max-width: 1240px;
+    padding: 0;
+  }
   }
 
   &_logo{

@@ -1,7 +1,12 @@
 @use '../../style/variables';
 
 .logement {
-    max-width: 1240px;
     background: rgb(85, 255, 156);
-    margin: 0 auto;
+    margin: 0 auto; 
+    padding: 0 20px;
+        
+    @media only screen and (min-width: 1280px) {
+      max-width: 1240px;
+      padding: 0;
+    }
 }

@@ -1,12 +1,11 @@
 @use '../../style/variables';
 
-.gallery{
-    background-color: variables.$secondary-bg;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    min-height: 350px;
-    padding: 50px 50px 0 50px;
-    margin-bottom: 30px;
-    border-radius: 25px;
+.gallery {
+  display: flex;
+  background-color: variables.$secondary-bg;
+  flex-flow: row wrap;
+  min-height: 350px;
+  padding: 50px 50px 0 50px;
+  margin-bottom: 30px;
+  border-radius: 25px;
 }
