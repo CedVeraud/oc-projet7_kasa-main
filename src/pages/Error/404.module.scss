@@ -4,32 +4,43 @@
   margin: 0 auto; 
   padding: 0 20px;
   text-align: center;
-   
-  @media only screen and (min-width: 1280px) {
+        
+  @include variables.respond-to('widescreen') {
     max-width: 1240px;
-    padding: 0;
   }
 
   &_title {
-    font-size: 288px;
+    font-size: 96px;
     font-weight: 700;
     color: variables.$primary-color;
     margin: 0;
     padding: 40px 0 100px;
+        
+    @include variables.respond-to('desktop') {
+      font-size: 288px;
+    }
   }
 
   &_text {
-    font-size: 36px;
+    font-size: 18px;
     font-weight: 500;
     color: variables.$primary-color;
     margin-top: 0;
     margin-bottom: 120px;
+        
+    @include variables.respond-to('desktop') {
+      font-size: 36px;
+    }
   }
   &_link {
     display: block;
     margin: 140px 0;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     text-decoration: underline;
+        
+    @include variables.respond-to('desktop') {
+      font-size: 18px;
+    }
   }
 }

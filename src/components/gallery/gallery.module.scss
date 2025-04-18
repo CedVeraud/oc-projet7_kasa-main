@@ -2,10 +2,15 @@
 
 .gallery {
   display: flex;
-  background-color: variables.$secondary-bg;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   min-height: 350px;
-  padding: 50px 50px 0 50px;
+  padding: 0;
   margin-bottom: 30px;
   border-radius: 25px;
+
+  @include variables.respond-to('desktop') {
+    background-color: variables.$secondary-bg;
+    flex-flow: row wrap;
+    padding: 50px 50px 0 50px;
+  }
 }

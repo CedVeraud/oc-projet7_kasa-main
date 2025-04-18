@@ -10,8 +10,13 @@
   }
 
   &_link {
-    font-size: 24px;
+    font-size: 17px;
     font-weight: 500;
-    margin-left: 57px;
+    margin-left: 26px;
+        
+    @include variables.respond-to('desktop') {
+      font-size: 24px;
+      margin-left: 57px;
+    }
   }
 }

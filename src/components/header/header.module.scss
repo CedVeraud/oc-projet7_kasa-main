@@ -5,18 +5,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 68px;
+    height: 47px;
     margin: 48px auto;
     padding: 0 20px;
-      
-  @media only screen and (min-width: 1280px) {
-    max-width: 1240px;
-    padding: 0;
-  }
+        
+    @include variables.respond-to('desktop') {
+      height: 68px;
+      padding: 0 20px;
+    }
+        
+    @include variables.respond-to('widescreen') {
+      max-width: 1240px;
+    }
   }
 
   &_logo{
-    height: 68px;
-    width: auto;
+    height: 47px;
+    width: auto;    
+        
+    @include variables.respond-to('desktop') {
+      height: 68px;
+    }
   }
 }

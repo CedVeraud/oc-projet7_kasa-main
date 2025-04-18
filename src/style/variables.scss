@@ -1,4 +1,4 @@
-//// Variables
+//// Colors
 $primary-color: #FF6060;
 
 $primary-bg: #FFFFFF;
@@ -7,3 +7,16 @@ $footer-bg: black;
 
 $primary-txt-color: black;
 $secondary-txt-color: white;
+
+//// Breakpoints
+@mixin respond-to($widescreen) {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin respond-to($desktop) {
+  @media (min-width: 1024px){
+    @content;
+  }
+}

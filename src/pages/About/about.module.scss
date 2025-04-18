@@ -1,11 +1,14 @@
 @use '../../style/variables';
 
 .about {
-    margin: 0 auto; 
-    padding: 0 20px;
-        
-    @media only screen and (min-width: 1280px) {
-      max-width: 1240px;
-      padding: 0;
-    }
+  margin: 0 auto; 
+  padding: 0 20px;
+      
+  @include variables.respond-to('widescreen') {
+    max-width: 1240px;
+  }
+}
+
+.about_collapse {
+  background-color: variables.$primary-color;
 }

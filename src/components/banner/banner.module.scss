@@ -6,32 +6,41 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 223px;
+  height: 111px;
   margin-bottom: 44px;
   border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
+        
+  @include variables.respond-to('desktop') {
+    height: 223px;
+  }
 
-  &_image{    
+  &_image {    
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  &_title{
+  &_title {
     position: relative;
     width: 100%;
     margin: 0 20px;
     color: variables.$secondary-txt-color;
-    text-align: center;
+    font-size: 24px;
+    text-align: left;
     text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+        
+    @include variables.respond-to('desktop') {
+      font-size: 48px;
+      text-align: center;
+    }
   }
 
-  &_overlay{
+  &_overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.5);
   }
 }
