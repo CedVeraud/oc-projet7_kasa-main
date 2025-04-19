@@ -1,0 +1,114 @@
+@use '../../style/variables';
+
+.collapse {
+
+  &_container {
+    width: 100%;
+    margin: 0 auto 20px;
+    
+    @include variables.respond-to('desktop') {
+      width: 80%;
+      margin: 0 auto 30px;
+    }
+  }
+  
+  &_btn {  
+    position: relative; 
+    z-index: 2; 
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-color: variables.$primary-color;
+    color: variables.$secondary-txt-color;
+    padding: 0 14px;
+    text-align: left;
+    border-radius: 5px;
+  }
+
+  &_title{    
+    font-size: 13px;
+    font-weight: 700;
+    margin: 7px 0;
+
+    @include variables.respond-to('desktop') {
+      font-size: 24px;
+      margin: 12px 0;
+    }
+  }
+
+  &_btnArrow {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0 10px;
+
+    & img{
+      width: 16px;
+      height: auto;
+      transform: rotate(0deg);
+      transition: transform 0.2s ease-in;
+
+      @include variables.respond-to('desktop') {
+        width: 24px;
+      }  
+    }
+
+    &[data-opened="true"] img{ 
+      transform: rotate(180deg);
+      transition: transform 0.4s ease-out;
+    }
+  }
+
+  &_text {
+    position: relative;
+    z-index: 1;
+    background-color: variables.$secondary-bg;
+    height: auto;
+    margin: 0 auto 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
+    
+    > span{
+      margin-bottom: 30px;
+    }
+
+    @include variables.respond-to('desktop') {
+      font-size: 24px;
+      padding-left: 60px;
+      padding-right: 60px;
+      }
+  }
+
+  &_text[data-opened="false"] {
+    height: 0px;
+    margin-top: -34px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    transition: all 0.2s ease-out;
+
+    > span{
+      color: variables.$secondary-bg;
+      margin-top: -34px;
+      transition: all 0.05s ease-out;
+    }
+  }  
+
+  &_text[data-opened="true"] {
+    min-height: 50px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    transition: all 0.4s ease-out;
+    
+    > span{
+      color: variables.$primary-txt-color;
+      opacity: 1;
+      margin-top: 0px;
+      transition: all 0.9s ease-in;
+    }
+  }  
+}

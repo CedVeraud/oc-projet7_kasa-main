@@ -14,10 +14,11 @@
     font-weight: 700;
     color: variables.$primary-color;
     margin: 0;
-    padding: 40px 0 100px;
+    padding: 80px 0 100px;
         
     @include variables.respond-to('desktop') {
       font-size: 288px;
+      padding: 40px 0 100px;
     }
   }
 

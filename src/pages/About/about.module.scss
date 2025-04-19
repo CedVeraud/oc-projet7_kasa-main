@@ -10,5 +10,7 @@
 }
 
 .about_collapse {
-  background-color: variables.$primary-color;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }

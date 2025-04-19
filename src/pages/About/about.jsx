@@ -21,7 +21,7 @@ function About() {
       <Banner
         img={bannerImage}
         name="Home banner"
-      />,
+      />
 
       <div className={Styles.about_collapse}>
         {about.map((about) => (
