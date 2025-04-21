@@ -3,26 +3,25 @@ import { NavLink } from 'react-router-dom'
 import Styles from './nav.module.scss'
 
 function HeaderNav() {
-  let activeNavLink = {
-    textDecoration: 'underline',
-  }
   return (
     <nav className={Styles.nav}>
       <ul>
         <li className={Styles.nav_link}>
           <NavLink
             to="/"
-            style={({ isActive }) => (isActive ? activeNavLink : undefined)}
+            className={({ isActive }) => (isActive ? Styles.nav_link_isActive : Styles.nav_link_isNotActive)}
           >
             Accueil
+            <hr />
           </NavLink>
         </li>
         <li className={Styles.nav_link}>
           <NavLink
             to="/about"
-            style={({ isActive }) => (isActive ? activeNavLink : undefined)}
+            className={({ isActive }) => (isActive ? Styles.nav_link_isActive : Styles.nav_link_isNotActive)}
           >
             A Propos
+            <hr />
           </NavLink>
         </li>
       </ul>

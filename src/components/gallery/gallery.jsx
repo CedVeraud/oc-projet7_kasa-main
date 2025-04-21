@@ -3,6 +3,7 @@ import Card from '../card/card'
 import Styles from './gallery.module.scss'
 
 function Gallery(props) {
+
   const { logements } = props
   if (!logements) {
     return null

@@ -14,6 +14,33 @@
     text-transform: uppercase;
     font-weight: 500;
     margin-left: 26px;
+    text-decoration: none;
+    
+    & hr{
+      border: none;
+      margin:0;
+      padding: 0;
+    }
+
+    &_isNotActive hr{
+      width: 0;
+      margin-left: 0;
+      border-bottom: solid 1px variables.$primary-txt-color;
+      transition: all .5s ease-out;
+    }
+
+    &_isNotActive:hover hr{
+      width: 22%;
+      margin-left: 0;
+      border-bottom: solid 1px variables.$primary-txt-color;
+      transition: all .5s ease-in-out;
+    }
+
+    &_isActive hr{
+      width: 100%;
+      border-bottom: solid 1px variables.$primary-txt-color; 
+      transition: width .25s ease-out;
+    }
         
     @include variables.respond-to('desktop') {
       font-size: 24px;

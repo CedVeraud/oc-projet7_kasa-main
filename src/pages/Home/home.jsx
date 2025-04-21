@@ -1,20 +1,13 @@
-import { useEffect, useState } from 'react'
-
+import { Hooks } from '../../utils/hooks'
 import Banner from '../../components/banner/banner'
 import Gallery from '../../components/gallery/gallery'
 
 import bannerImage from '../../assets/images/home-banner.jpg'
 import Styles from './home.module.scss'
 
-function Home() {
-  const [logements, setLogements] = useState([])
+function Home(props) {
 
-  useEffect(() => {
-    fetch('/src/utils/data/logements.json')
-      .then((res) => res.json())
-      .then((res) => setLogements(res))
-      .catch((err) => console.log('Erreur : ', err))
-  }, [])
+  const logements = Hooks(props);
 
   const bannerTitle = 'Chez vous, partout et ailleurs'
   return (
