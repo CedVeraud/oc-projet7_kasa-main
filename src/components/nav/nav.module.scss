@@ -30,10 +30,10 @@
     }
 
     &_isNotActive:hover hr{
-      width: 22%;
+      width: 18px;
       margin-left: 0;
       border-bottom: solid 1px variables.$primary-txt-color;
-      transition: all .5s ease-in-out;
+      transition: all .15s ease-in-out;
     }
 
     &_isActive hr{
