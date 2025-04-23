@@ -1,1 +1,40 @@
+@use '../../style/variables';
 
+.host {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    &_container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &_picture {
+        background-color: variables.$secondary-bg;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        font-size: 7px;
+      
+        @include variables.respond-to('desktop') {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    &_name {
+        font-size: 12px;
+        font-weight: 500;
+        color: variables.$primary-color;
+        margin-right: 15px;
+        text-align: end;
+      
+        @include variables.respond-to('desktop') {
+            font-size: 18px;
+        }
+    }
+}

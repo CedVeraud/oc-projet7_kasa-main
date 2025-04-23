@@ -10,10 +10,12 @@ function Logement() {
   return (
     <main className={Styles.logement}>
       <Carousel />
-      <Infos />
-      <div className={Styles.hostRating_container}>
-        <Rating />
-        <Host />
+      <div className={Styles.logement_infos}>
+        <Infos />
+        <div className={Styles.hostRating_container}>
+          <Rating />
+          <Host />
+        </div>
       </div>
       <div className={Styles.collapse_container}>
         <Collapse title='Description' />
