@@ -22,11 +22,17 @@
     }
     
     .hostRating_container {
-      border: 1px solid variables.$primary-color;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       width: 100%;
 
       @include variables.respond-to('desktop') {
         width: calc(50% - 22px);
+        flex-direction: column-reverse;
+        align-items: end;
+
       }
     }
   }

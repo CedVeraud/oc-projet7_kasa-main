@@ -1,7 +1,7 @@
 import { Hooks } from '../../utils/hooks'
-import { useParams } from "react-router-dom"
+import { useParams } from 'react-router-dom'
 
-import Styles from './host.module.scss';
+import Styles from './host.module.scss'
 
 function Host() {
   //// FIND DATA ////
@@ -29,9 +29,14 @@ function Host() {
   return (
     <div className={Styles.host}>
       <div className={Styles.host_container}>
-        <p className={Styles.host_name}>
-          {hostName}
-        </p>
+
+        {Name && Name.length > 0 && Name.map((hostName, i) => (
+          <p key={i} className={Styles.host_name}>
+            {hostName?.host.name.split(" ")[0]}
+            <br />
+            {hostName?.host.name.split(" ")[1]}
+          </p>
+        ))}
 
         {Picture && Picture.length > 0 && Picture.map((hostPicture, i) => (
           <img
@@ -41,6 +46,7 @@ function Host() {
             alt=" "
           />
         ))}
+
       </div>
     </div>
   )

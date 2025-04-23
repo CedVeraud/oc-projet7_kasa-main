@@ -1,1 +1,21 @@
+@use '../../style/variables';
 
+.rating {
+  &_container {
+    margin: 0;
+    
+    @include variables.respond-to('desktop') {
+      margin-top: 20px;
+    }
+  }
+  
+  &_on, &_off {
+    width: 13px;
+    margin-right: 5px;
+    
+    @include variables.respond-to('desktop') {
+      width: 24px;
+      margin-right: 10px;
+    }
+  }
+}

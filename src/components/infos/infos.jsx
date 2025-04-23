@@ -1,7 +1,7 @@
 import { Hooks } from '../../utils/hooks'
-import { useParams } from "react-router-dom"
+import { useParams } from 'react-router-dom'
 
-import Styles from './infos.module.scss';
+import Styles from './infos.module.scss'
 
 function Infos() {
 
