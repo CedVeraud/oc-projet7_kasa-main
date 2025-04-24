@@ -1,1 +1,90 @@
+@use '../../style/variables';
 
+.carousel {
+  padding: 0;
+  margin: 0 auto;
+
+  &_container {
+    background-color: variables.$secondary-bg;
+    margin: 0 auto;
+    width: 100%;
+    height: 255px;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    align-items: flex-end;
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+        
+    @include variables.respond-to('desktop') {
+      height: 415px;
+    }
+  }
+
+  &_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    opacity: 0;
+  }
+
+  &_prev,
+  &_next {
+    position: absolute;
+    height: 24px;
+    top: calc(50% - 12px);
+    background: transparent;
+    display: flex;
+    border-color: transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin: 0px 25px;
+    transition: all 0.3s linear;
+    
+    @include variables.respond-to('desktop') {
+      height: 80px;
+      top: calc(50% - 40px);
+    }
+  }
+
+  &_prev {
+    left: 0;
+    transform: rotate(0);
+  }
+
+  &_next {
+    right: 0;
+    transform: rotate(180deg);
+  }
+
+  &_counter {
+    display: none;
+    position:relative;
+    z-index: 1;
+    color: variables.$secondary-txt-color;
+    font-size: 18px;
+    font-weight: 500;    
+    
+    @include variables.respond-to('desktop') {
+      display: block;
+    } 
+  }
+}
+
+//// NAV ////
+.activeSlide > .carousel_image{
+  opacity: 1;
+}
+
+.lastSlide > .carousel_image{
+  opacity: 0;
+}
+
+.nextSlide > .carousel_image{
+  opacity: 0;
+}

@@ -18,6 +18,9 @@ function Host() {
   const arrayName = []
   arrayName.push(hostName)
 
+  console.log(hostName)
+
+
   // Host Picture
   const Picture = []
   Picture.push(currentLogement)
