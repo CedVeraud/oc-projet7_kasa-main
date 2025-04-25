@@ -1,47 +1,19 @@
-import { Hooks } from '../../utils/hooks'
-import { useParams } from 'react-router-dom'
-
 import Styles from './infos.module.scss'
 
-function Infos() {
+function Infos(props) {
 
-  //// FIND DATA ////
-  const dataLogements = Hooks()
-  const { logementId } = useParams()
-  const currentLogement = dataLogements.find((data) => data.id === logementId)
+  const infosTitle = props.title
+  const infosLocation = props.location
 
-  //// PUSH DATA ////
-  // title
-  const Title = []
-  Title.push(currentLogement)
-  // array
-  const infosTitle = Title[0]?.title
-  const arrayTitle = []
-  arrayTitle.push(infosTitle)
-
-  // location
-  const Location = []
-  Location.push(currentLogement)
-  // array
-  const infosLocation = Location[0]?.location
-  const arrayLocation = []
-  arrayLocation.push(infosLocation)
-
-  // tags
-  const Tag = []
-  Tag.push(currentLogement)
-  // array
-  const infosTag = Tag[0]?.tags
-  const arrayTag = []
-  arrayTag.push(infosTag)
+  const infosTag = props.tag
 
   return (
     <div className={Styles.infos_container}>
-      <h1 key={infosTitle} className={Styles.infos_title}>
+      <h1 className={Styles.infos_title}>
         {infosTitle}
       </h1>
 
-      <p key={infosLocation} className={Styles.infos_location}>
+      <p className={Styles.infos_location}>
         {infosLocation}
       </p>
 

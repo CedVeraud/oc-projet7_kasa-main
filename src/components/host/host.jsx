@@ -1,54 +1,27 @@
-import { Hooks } from '../../utils/hooks'
-import { useParams } from 'react-router-dom'
-
 import Styles from './host.module.scss'
 
-function Host() {
-  //// FIND DATA ////
-  const dataLogements = Hooks()
-  const { logementId } = useParams()
-  const currentLogement = dataLogements.find((data) => data.id === logementId)
+function Host(props) {
 
-  //// PUSH DATA ////
-  // Host Name
-  const Name = []
-  Name.push(currentLogement)
-  // array
-  const hostName = Name[0]?.host.name
-  const arrayName = []
-  arrayName.push(hostName)
-
-  console.log(hostName)
-
-
-  // Host Picture
-  const Picture = []
-  Picture.push(currentLogement)
-  // array
-  const hostPicture = Picture[0]?.host.picture
-  const arrayPicture = []
-  arrayPicture.push(hostPicture)
+  const firstName = props.hostName
+  const hostPicture = props.picture
 
   return (
     <div className={Styles.host}>
       <div className={Styles.host_container}>
+        <div class={Styles.host_name}>
+          {firstName && firstName.length > 0 && firstName.map((hostName, i) => (
+            <p key={i} className={Styles.host_name}>
+              {hostName?.split(" ")[0]}
+              {hostName?.split(" ")[1]}
+            </p>
+          ))}
+        </div>
 
-        {Name && Name.length > 0 && Name.map((hostName, i) => (
-          <p key={i} className={Styles.host_name}>
-            {hostName?.host.name.split(" ")[0]}
-            <br />
-            {hostName?.host.name.split(" ")[1]}
-          </p>
-        ))}
-
-        {Picture && Picture.length > 0 && Picture.map((hostPicture, i) => (
-          <img
-            className={Styles.host_picture}
-            key={i}
-            src={hostPicture?.host.picture}
-            alt=" "
-          />
-        ))}
+        <img
+          className={Styles.host_picture}
+          src={hostPicture}
+          alt=" "
+        />
 
       </div>
     </div>

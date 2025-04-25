@@ -1,5 +1,5 @@
 import { Hooks } from '../../utils/hooks';
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 import Carousel from '../../components/carousel/carousel'
 import Infos from '../../components/infos/infos'
@@ -10,48 +10,45 @@ import Collapse from '../../components/collapse/collapse'
 import Styles from './logement.module.scss'
 
 function Logement() {
-
   //// FIND DATA ////
   const dataLogements = Hooks()
   const { logementId } = useParams()
   const currentLogement = dataLogements.find((data) => data.id === logementId)
 
-  //Error 
-  const navigate = useNavigate()
-  if (!currentLogement) {
-    navigate('/error')
-  }
-
   //// PUSH DATA ////
-  //// COLLAPSE DESCRIPTION ////
-  const Collapse1 = []
-  Collapse1.push(currentLogement)
-  //
-  const collapse1Description = Collapse1[0]?.description
-  const arrayDescription = []
-  arrayDescription.push(collapse1Description)
+  const currentProps = []
+  currentProps.push(currentLogement)
 
-  //// COLLAPSE EQUIPEMENT ////
-  const Collapse2 = []
-  Collapse2.push(currentLogement)
   //
-  const collapse2Equipments = Collapse2[0]?.equipments
-  const arrayEquipments = []
-  arrayEquipments.push(collapse2Equipments)
+  const infosTitle = currentProps[0]?.title
+  const infosLocation = currentProps[0]?.location
+  //
+  const Hostname = currentProps[0]?.host.name.split(' ')
+  const Hostpicture = currentProps[0]?.host.picture
+  //
+  const rating = currentProps[0]?.rating
 
   return (
     <main className={Styles.logement}>
       <Carousel />
       <div className={Styles.logement_infos}>
-        <Infos />
+        <Infos
+          title={infosTitle}
+          location={infosLocation}
+          tag={currentProps[0]?.tags}
+
+        />
         <div className={Styles.hostRating_container}>
-          <Rating />
-          <Host />
+          <Rating rating={rating} />
+          <Host
+            hostName={Hostname}
+            picture={Hostpicture}
+          />
         </div>
       </div>
       <div className={Styles.collapse_container}>
-        <Collapse title='Description' content={collapse1Description} />
-        <Collapse title='Equipements' content={collapse2Equipments} />
+        <Collapse title='Description' content={currentProps[0]?.description} />
+        <Collapse title='Equipements' content={currentProps[0]?.equipments} />
       </div>
     </main>
   )

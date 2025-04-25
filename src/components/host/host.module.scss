@@ -30,7 +30,7 @@
         font-size: 12px;
         font-weight: 500;
         color: variables.$primary-color;
-        margin: 0 15px;
+        margin: 2px 5px;
         text-align: end;
       
         @include variables.respond-to('desktop') {
