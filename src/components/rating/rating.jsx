@@ -9,7 +9,6 @@ function Rating(props) {
   // Count stars
   const countRating = Number(starsRating)
   const stars = Array.from({ length: 5 }, (_, i) => i + 1)
-  console.log(starsRating)
 
   return (
     <div className={Styles.rating_container}>

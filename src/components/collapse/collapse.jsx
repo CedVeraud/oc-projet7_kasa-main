@@ -25,8 +25,11 @@ function Collapse(props) {
           <img src={downArrow} />
         </button>
       </div>
-      <div data-opened={isOpen} className={Styles.collapse_text}>
-        <div>{content}</div>
+
+      <div
+        data-opened={isOpen}
+        className={Styles.collapse_text}>
+        {content}
       </div>
     </div>
   )

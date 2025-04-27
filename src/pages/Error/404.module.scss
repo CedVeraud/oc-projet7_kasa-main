@@ -1,12 +1,15 @@
 @use '../../style/variables';
 
-.error {    
+.error {
+  text-align: center;
+  
+  &_container {
   margin: 0 auto; 
   padding: 0 20px;
-  text-align: center;
         
-  @include variables.respond-to('widescreen') {
-    max-width: 1240px;
+    @include variables.respond-to('widescreen') {
+      max-width: 1240px;
+    }
   }
 
   &_title {

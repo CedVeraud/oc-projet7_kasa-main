@@ -9,7 +9,7 @@ function Gallery(props) {
     return null
   }
   return (
-    <div className={Styles.gallery}>
+    <section className={Styles.gallery}>
       {logements.map((logement) => (
         <Card
           key={logement.id}
@@ -18,7 +18,7 @@ function Gallery(props) {
           thumb={logement.cover}
         />
       ))}
-    </div>
+    </section>
   )
 }
 

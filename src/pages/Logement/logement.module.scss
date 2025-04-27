@@ -37,13 +37,19 @@
     }
   }
 
-  .collapse_container{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  .collapse{
+    &_container{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
 
-    @include variables.respond-to('desktop') {
-      flex-direction: row;
+      @include variables.respond-to('desktop') {
+        flex-direction: row;
+      }
+    }
+
+    &_list{
+      list-style: none;
     }
   }
 }

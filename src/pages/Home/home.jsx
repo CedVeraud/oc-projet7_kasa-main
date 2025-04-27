@@ -5,11 +5,11 @@ import Gallery from '../../components/gallery/gallery'
 import bannerImage from '../../assets/images/home-banner.jpg'
 import Styles from './home.module.scss'
 
-function Home(props) {
+function Home() {
 
-  const logements = Hooks(props);
-
+  const logements = Hooks();
   const bannerTitle = 'Chez vous, partout et ailleurs'
+
   return (
     <main className={Styles.home}>
       <Banner

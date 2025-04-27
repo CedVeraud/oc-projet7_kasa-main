@@ -20,10 +20,10 @@ function About() {
     <main className={Styles.about}>
       <Banner
         img={bannerImage}
-        name="Home banner"
+        name="Bannière"
       />
 
-      <div className={Styles.about_collapse}>
+      <section className={Styles.about_collapse}>
         {about.map((about) => (
           // console.log(about),
           <Collapse
@@ -33,7 +33,7 @@ function About() {
             content={about.content}
           />
         ))}
-      </div>
+      </section>
 
     </main>
   )

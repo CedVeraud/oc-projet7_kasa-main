@@ -6,6 +6,7 @@ import Infos from '../../components/infos/infos'
 import Host from '../../components/host/host'
 import Rating from '../../components/rating/rating'
 import Collapse from '../../components/collapse/collapse'
+import Error from '../Error/404'
 
 import Styles from './logement.module.scss'
 
@@ -15,41 +16,45 @@ function Logement() {
   const { logementId } = useParams()
   const currentLogement = dataLogements.find((data) => data.id === logementId)
 
-  //// PUSH DATA ////
-  const currentProps = []
-  currentProps.push(currentLogement)
-
-  //
-  const infosTitle = currentProps[0]?.title
-  const infosLocation = currentProps[0]?.location
-  //
-  const Hostname = currentProps[0]?.host.name.split(' ')
-  const Hostpicture = currentProps[0]?.host.picture
-  //
-  const rating = currentProps[0]?.rating
+  // ERROR CHECK
+  const checkURL = currentLogement?.id
+  if (checkURL != logementId) {
+    return <Error />
+  }
 
   return (
     <main className={Styles.logement}>
-      <Carousel />
-      <div className={Styles.logement_infos}>
+      <Carousel pictures={currentLogement?.pictures} />
+      <section className={Styles.logement_infos}>
         <Infos
-          title={infosTitle}
-          location={infosLocation}
-          tag={currentProps[0]?.tags}
-
+          title={currentLogement?.title}
+          location={currentLogement?.location}
+          tag={currentLogement?.tags}
         />
+
         <div className={Styles.hostRating_container}>
-          <Rating rating={rating} />
+          <Rating rating={currentLogement?.rating} />
           <Host
-            hostName={Hostname}
-            picture={Hostpicture}
+            name={currentLogement?.host.name.split(' ')}
+            picture={currentLogement?.host.picture}
           />
         </div>
-      </div>
-      <div className={Styles.collapse_container}>
-        <Collapse title='Description' content={currentProps[0]?.description} />
-        <Collapse title='Equipements' content={currentProps[0]?.equipments} />
-      </div>
+      </section>
+
+      <section className={Styles.collapse_container}>
+        <Collapse title='Description' content={currentLogement?.description} />
+        <Collapse
+          title='Équipements'
+          content={
+            <ul>
+              {currentLogement?.equipments.map((equipment) => (
+                <li key={equipment} className={Styles.collapse_list}>
+                  {equipment}
+                </li>
+              ))}
+            </ul>
+          } />
+      </section>
     </main>
   )
 }

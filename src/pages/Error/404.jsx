@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-
 import Styles from './404.module.scss'
 
 function Error() {

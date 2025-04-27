@@ -2,17 +2,17 @@ import Styles from './host.module.scss'
 
 function Host(props) {
 
-  const firstName = props.hostName
+  const hostName = props.name
   const hostPicture = props.picture
 
   return (
     <div className={Styles.host}>
       <div className={Styles.host_container}>
-        <div class={Styles.host_name}>
-          {firstName && firstName.length > 0 && firstName.map((hostName, i) => (
+        <div className={Styles.host_name}>
+          {hostName && hostName.length > 0 && hostName.map((splitName, i) => (
             <p key={i} className={Styles.host_name}>
-              {hostName?.split(" ")[0]}
-              {hostName?.split(" ")[1]}
+              {splitName?.split(" ")[0]}
+              {splitName?.split(" ")[1]}<br />
             </p>
           ))}
         </div>
