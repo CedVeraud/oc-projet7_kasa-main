@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from "react";
 
+import Loader from '../../components/loader/loader'
 import Banner from '../../components/banner/banner'
 import Collapse from '../../components/collapse/collapse'
 
@@ -16,25 +17,39 @@ function About() {
       .catch((err) => console.log('Erreur : ', err))
   }, [])
 
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 150);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <main className={Styles.about}>
-      <Banner
-        img={bannerImage}
-        name="Bannière"
-      />
-
-      <section className={Styles.about_collapse}>
-        {about.map((about) => (
-          // console.log(about),
-          <Collapse
-            key={about.id}
-            id={about.id}
-            title={about.title}
-            content={about.content}
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <Banner
+            img={bannerImage}
+            name="Bannière"
           />
-        ))}
-      </section>
 
+          <section className={Styles.about_collapse}>
+            {about.map((about) => (
+              // console.log(about),
+              <Collapse
+                key={about.id}
+                id={about.id}
+                title={about.title}
+                content={about.content}
+              />
+            ))}
+          </section>
+        </>
+      )}
     </main>
   )
 }

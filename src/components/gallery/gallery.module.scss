@@ -11,6 +11,6 @@
   @include variables.respond-to('desktop') {
     background-color: variables.$secondary-bg;
     flex-flow: row wrap;
-    padding: 50px 50px 0 50px;
+    padding: 40px 20px 0 30px;
   }
 }

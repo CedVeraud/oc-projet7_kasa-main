@@ -16,7 +16,28 @@ $secondary-txt-color: white;
 }
 
 @mixin respond-to($desktop) {
-  @media (min-width: 1024px){
+  @media (min-width: 800px){
     @content;
+  }
+}
+
+// Animated intro
+@mixin animated_list{
+
+  @for $i from 1 through 9 {
+    &:nth-child(#{$i}) {
+        animation: animated_list-item $i*200+10ms $i*200+500ms ease-out backwards;
+    }
+  }
+  
+  @keyframes animated_list-item {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }

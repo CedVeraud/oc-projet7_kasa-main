@@ -18,7 +18,6 @@
         width: 32px;
         height: 32px;
         object-fit: cover;
-        font-size: 7px;
       
         @include variables.respond-to('desktop') {
             width: 64px;
@@ -30,7 +29,7 @@
         font-size: 12px;
         font-weight: 500;
         color: variables.$primary-color;
-        margin: 2px 5px;
+        margin: 0 5px 2px;
         text-align: end;
       
         @include variables.respond-to('desktop') {

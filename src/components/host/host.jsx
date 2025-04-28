@@ -12,7 +12,7 @@ function Host(props) {
           {hostName && hostName.length > 0 && hostName.map((splitName, i) => (
             <p key={i} className={Styles.host_name}>
               {splitName?.split(" ")[0]}
-              {splitName?.split(" ")[1]}<br />
+              {splitName?.split(" ")[1]}
             </p>
           ))}
         </div>

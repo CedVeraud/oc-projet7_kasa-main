@@ -1,0 +1,68 @@
+@use '../../style/variables';
+
+.loader {
+  
+  &_container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 40px 0;
+    color: variables.$primary-color;
+    font-weight: 700;
+  }
+
+  &_ico{
+    width: auto;
+    height: 80px
+  }   
+
+  &_progress {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    margin: 0 auto;
+
+    &::after{
+        content: " ";
+        position:absolute;
+        z-index: 10;
+        width: 120px;
+        height: 80px;
+        left: calc(50% - 60px);
+        top: 150px;
+        margin: 0 auto;
+        background: variables.$primary-bg;
+        animation: loader-bar 1600ms 100ms forwards;
+        transform-origin: top;
+        
+        
+
+      @include variables.respond-to('desktop') {
+        top: 200px;
+      }
+    }
+  }
+}
+
+@keyframes loader-bar {
+	0% {
+		transform: scaleY(1);
+	}
+	17% {
+		transform: scaleY(0.94);
+		animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+	}
+	24% {
+		transform: scaleY(0.75);
+		animation-timing-function: cubic-bezier(0.3, 0.3, 0.3, 1);
+	}
+	65% {
+		transform: scaleY(0.3);
+		animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+	}
+	100% {
+		transform: scaleY(0);
+	}
+}

@@ -16,6 +16,9 @@
     display: flex;
     overflow: hidden;
     border-radius: 20px;
+    opacity: 0;
+    animation: reveal 1600ms 10ms forwards;  
+
         
     @include variables.respond-to('desktop') {
       height: 415px;
@@ -31,10 +34,12 @@
     object-fit: cover;
     border-radius: 20px;
     opacity: 0;
+    transition: all .4s;
   }
+
   &_nav{
     width: 100%;
-    
+
     &_prev,
     &_next {
       position: absolute;
@@ -82,12 +87,25 @@
 //// NAV ////
 .activeSlide > .carousel_image{
   opacity: 1;
+  transform: translateX(0);
 }
 
 .lastSlide > .carousel_image{
   opacity: 0;
+  transform: translateX(-100%);
 }
 
 .nextSlide > .carousel_image{
   opacity: 0;
+  transform: translateX(100%);
+}
+
+// Animated elements
+@keyframes reveal {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

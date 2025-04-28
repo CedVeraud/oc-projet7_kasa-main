@@ -4,10 +4,11 @@
 
   &_container {
     width: 100%;
-    margin: 0 auto 20px;
+    margin: 0 auto 22px;
+    @include variables.animated_list; 
     
     @include variables.respond-to('desktop') {
-      width: 80%;
+      width: 82%;
       margin: 0 auto 30px;
     }
   }
@@ -20,9 +21,14 @@
     justify-content: space-between;
     background-color: variables.$primary-color;
     color: variables.$secondary-txt-color;
-    padding: 0 14px;
+    padding: 0 0 0 14px;
     text-align: left;
     border-radius: 5px;
+  
+    @include variables.respond-to('desktop') {
+      padding: 0 14px;
+      border-radius: 10px;
+    }
   }
 
   &_title{    
@@ -42,7 +48,7 @@
     cursor: pointer;
     padding: 0 10px;
 
-    & img{
+    & img {
       width: 16px;
       height: auto;
       transform: rotate(0deg);

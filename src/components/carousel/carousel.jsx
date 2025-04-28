@@ -32,6 +32,7 @@ function Carousel(props) {
 
   return (
     <section className={Styles.carousel}>
+
       <div className={Styles.carousel_container}>
         {sliderPictures && sliderPictures.length > 0 && sliderPictures.map((logement, logementIndex) => {
           let displayStatus = Styles.nextSlide
@@ -57,11 +58,9 @@ function Carousel(props) {
           )
         })}
 
-
         <nav className={Styles.carousel_nav}>
           {carouselNav}
         </nav>
-
 
       </div>
     </section>

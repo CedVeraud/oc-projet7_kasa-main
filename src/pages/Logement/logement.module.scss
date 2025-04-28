@@ -13,6 +13,10 @@
     flex-direction: column;
     margin: 0 0 20px;
     gap: 20px;
+    animation: reveal 1600ms 10ms forwards;  
+
+    //@include variables.animated_list;
+
 
     @include variables.respond-to('desktop') {
       flex-direction: row;
@@ -37,19 +41,27 @@
     }
   }
 
-  .collapse{
-    &_container{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+  .collapse {
+    display: flex;
+    flex-direction: column;
 
-      @include variables.respond-to('desktop') {
-        flex-direction: row;
-      }
+    @include variables.respond-to('desktop') {
+      flex-direction: row;
+      gap: 10px;
     }
 
     &_list{
       list-style: none;
     }
   }
+}
+
+// Animated elements
+@keyframes reveal {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
