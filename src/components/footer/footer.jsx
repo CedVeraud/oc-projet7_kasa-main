@@ -1,5 +1,5 @@
-import logoFooter from '../../assets/logo/kasalogo.svg';
-
+import logoFooter from '../../assets/logo/kasalogo.svg'
+// ASSETS
 import Styles from './footer.module.scss'
 
 function Footer() {

@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 export function Hooks() {
-
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([])
 
   const getData = () => {
     fetch('/src/utils/data/logements.json'
@@ -17,6 +16,7 @@ export function Hooks() {
       .then((res) => setData(res))
       .catch((err) => console.log('Erreur : ', err))
   }
+
   useEffect(() => {
     getData()
   }, [])

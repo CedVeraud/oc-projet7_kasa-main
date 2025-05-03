@@ -1,9 +1,8 @@
+// ASSETS
 import loaderIco from '../../assets/ico/kasa-ico.svg'
 import Styles from './loader.module.scss'
 
-// LOADING
 function Loader() {
-
   return (
     <main className={Styles.loader_container}>
       <div className={Styles.loader_container}>

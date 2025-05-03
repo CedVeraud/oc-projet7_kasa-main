@@ -8,3 +8,11 @@
     max-width: 1240px;
   }
 }
+
+.banner_title{
+  display: block;
+
+  @include variables.respond-to('desktop') {
+    display: inline;
+  }
+}

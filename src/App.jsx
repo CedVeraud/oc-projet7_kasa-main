@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-
+// LAYOUT
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-
+// PAGES
 import Home from './pages/Home/home';
 import About from './pages/About/about';
 import Logement from './pages/Logement/logement';

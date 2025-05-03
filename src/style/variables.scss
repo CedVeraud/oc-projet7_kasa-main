@@ -16,14 +16,13 @@ $secondary-txt-color: white;
 }
 
 @mixin respond-to($desktop) {
-  @media (min-width: 800px){
+  @media (min-width: 980px){
     @content;
   }
 }
 
 // Animated intro
-@mixin animated_list{
-
+@mixin animated_list {
   @for $i from 1 through 9 {
     &:nth-child(#{$i}) {
         animation: animated_list-item $i*200+10ms $i*200+500ms ease-out backwards;

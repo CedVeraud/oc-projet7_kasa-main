@@ -1,7 +1,6 @@
 @use '../../style/variables';
 
 .collapse {
-
   &_container {
     width: 100%;
     margin: 0 auto 22px;
@@ -67,12 +66,13 @@
 
   &_text {
     position: relative;
+    font-size: 12px;
+    font-weight: 400;
     z-index: 1;
     background-color: variables.$secondary-bg;
     height: auto;
     margin: 0 auto 30px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 0 20px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     overflow: hidden;
@@ -82,10 +82,8 @@
     }
 
     @include variables.respond-to('desktop') {
-      font-size: 24px;
-      padding-left: 60px;
-      padding-right: 60px;
-      }
+      font-size: 18px;
+    }
   }
 
   &_text[data-opened="false"] {

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-
+import React, { useState, useEffect } from 'react'
+// ASSETS
 import Arrow from '../../assets/images/carousel-arrow.svg'
 import Styles from './carousel.module.scss'
 
@@ -17,10 +17,13 @@ function Carousel(props) {
     }
   }, [index, sliderPictures])
 
+  // NAV = CONDITIONNAL RENDERING
   let carouselNav = ''
   if (sliderPictures?.length > 1) {
     carouselNav = <>
-      <p id="counter" className={Styles.carousel_nav_counter}>{index + 1}/{sliderPictures?.length}</p>
+      <p id="counter" className={Styles.carousel_nav_counter}>
+        {index + 1}/{sliderPictures?.length}
+      </p>
       <button id="prev" className={Styles.carousel_nav_prev} onClick={() => setIndex(index - 1)}>
         <img src={Arrow} />
       </button>
@@ -30,15 +33,12 @@ function Carousel(props) {
     </>
   }
 
+  // RENDER
   return (
     <section className={Styles.carousel}>
-
       <div className={Styles.carousel_container}>
         {sliderPictures && sliderPictures.length > 0 && sliderPictures.map((logement, logementIndex) => {
           let displayStatus = Styles.nextSlide
-          if (logementIndex === index && sliderPictures?.length === 1) {
-            displayStatus = Styles.activeSlide
-          }
           if (logementIndex === index) {
             displayStatus = Styles.activeSlide
           }
@@ -46,7 +46,7 @@ function Carousel(props) {
             (logementIndex === index - 1 ||
               (index === 0 && logementIndex === sliderPictures.length - 1))
           ) {
-            displayStatus = Styles.lastSlide
+            displayStatus = Styles.prevSlide
           }
 
           return (
@@ -61,7 +61,6 @@ function Carousel(props) {
         <nav className={Styles.carousel_nav}>
           {carouselNav}
         </nav>
-
       </div>
     </section>
   )

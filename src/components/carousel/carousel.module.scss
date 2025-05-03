@@ -17,8 +17,7 @@
     overflow: hidden;
     border-radius: 20px;
     opacity: 0;
-    animation: reveal 1600ms 10ms forwards;  
-
+    animation: reveal 1600ms 10ms forwards;
         
     @include variables.respond-to('desktop') {
       height: 415px;
@@ -85,22 +84,25 @@
 }
 
 //// NAV ////
-.activeSlide > .carousel_image{
+.activeSlide > .carousel_image {
   opacity: 1;
   transform: translateX(0);
+  transition: transform .4s ease-in-out;
 }
 
-.lastSlide > .carousel_image{
+.prevSlide > .carousel_image {
   opacity: 0;
-  transform: translateX(-100%);
+  transform: translateX(-120%);
+  transition: all .6s ease-out;
 }
 
-.nextSlide > .carousel_image{
+.nextSlide > .carousel_image {
   opacity: 0;
   transform: translateX(100%);
+  transition: all .4s ease-in-out;
 }
 
-// Animated elements
+// Fade in elements
 @keyframes reveal {
 	0% {
 		opacity: 0;

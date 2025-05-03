@@ -1,10 +1,11 @@
+// ASSETS
 import Styles from './host.module.scss'
 
 function Host(props) {
-
   const hostName = props.name
   const hostPicture = props.picture
 
+  // RENDER
   return (
     <div className={Styles.host}>
       <div className={Styles.host_container}>
@@ -22,7 +23,6 @@ function Host(props) {
           src={hostPicture}
           alt=" "
         />
-
       </div>
     </div>
   )

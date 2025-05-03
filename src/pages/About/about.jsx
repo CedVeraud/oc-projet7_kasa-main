@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
-
-import Loader from '../../components/loader/loader'
+import { useState, useEffect } from 'react'
+// COMPONENTS
 import Banner from '../../components/banner/banner'
 import Collapse from '../../components/collapse/collapse'
-
+// ASSETS
 import bannerImage from '../../assets/images/about-banner.jpg'
 import Styles from './about.module.scss'
 
 function About() {
+  // GET DATA
   const [about, setAbout] = useState([])
-
   useEffect(() => {
     fetch('/src/utils/data/about.json')
       .then((res) => res.json())
@@ -17,39 +16,24 @@ function About() {
       .catch((err) => console.log('Erreur : ', err))
   }, [])
 
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 150);
-
-    return () => clearTimeout(timeout);
-  }, []);
-
+  // RENDER
   return (
     <main className={Styles.about}>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <>
-          <Banner
-            img={bannerImage}
-            name="Bannière"
-          />
+      <Banner
+        img={bannerImage}
+        name="Bannière"
+      />
 
-          <section className={Styles.about_collapse}>
-            {about.map((about) => (
-              // console.log(about),
-              <Collapse
-                key={about.id}
-                id={about.id}
-                title={about.title}
-                content={about.content}
-              />
-            ))}
-          </section>
-        </>
-      )}
+      <section className={Styles.about_collapse}>
+        {about.map((about) => (
+          <Collapse
+            key={about.id}
+            id={about.id}
+            title={about.title}
+            content={about.content}
+          />
+        ))}
+      </section>
     </main>
   )
 }

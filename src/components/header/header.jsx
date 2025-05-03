@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-
-import HeaderLogo from '../../assets/logo/kasalogo.svg'
+// COMPONENTS
 import HeaderNav from '../nav/nav'
-
+// ASSETS
+import HeaderLogo from '../../assets/logo/kasalogo.svg'
 import Styles from './header.module.scss'
 
 function Header() {
@@ -16,9 +16,9 @@ function Header() {
             alt="logo Kasa"
           />
         </Link>
+
         <HeaderNav />
       </div>
-
     </header>
   )
 }

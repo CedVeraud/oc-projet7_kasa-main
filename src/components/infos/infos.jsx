@@ -1,12 +1,12 @@
+// ASSETS
 import Styles from './infos.module.scss'
 
 function Infos(props) {
-
   const infosTitle = props.title
   const infosLocation = props.location
-
   const infosTag = props.tag
 
+  //RENDER
   return (
     <div className={Styles.infos_container}>
       <h1 className={Styles.infos_title}>

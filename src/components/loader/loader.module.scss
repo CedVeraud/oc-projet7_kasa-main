@@ -1,7 +1,6 @@
 @use '../../style/variables';
 
 .loader {
-  
   &_container{
     display: flex;
     align-items: center;
@@ -14,7 +13,13 @@
 
   &_ico{
     width: auto;
-    height: 80px
+    height: 50px;
+    margin-top: 30px;
+
+    @include variables.respond-to('desktop') {
+      height: 80px;
+      margin-top: 0;
+    }
   }   
 
   &_progress {
@@ -27,19 +32,19 @@
     &::after{
         content: " ";
         position:absolute;
-        z-index: 10;
+        z-index: 1;
         width: 120px;
-        height: 80px;
+        height: 50px;
         left: calc(50% - 60px);
         top: 150px;
-        margin: 0 auto;
+        margin: 30px auto;
         background: variables.$primary-bg;
-        animation: loader-bar 1600ms 100ms forwards;
-        transform-origin: top;
-        
-        
+        animation: loader-bar 2000ms 100ms forwards;
+        transform-origin: top;        
 
       @include variables.respond-to('desktop') {
+        height: 80px;
+        margin: 0 auto;
         top: 200px;
       }
     }

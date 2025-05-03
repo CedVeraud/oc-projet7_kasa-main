@@ -1,7 +1,8 @@
-import { Hooks } from '../../utils/hooks';
-import { useParams } from "react-router-dom"
-import { useState, useEffect } from "react";
-
+import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+// DATA
+import data from '../../utils/data/logements.json'
+// COMPONENTS
 import Loader from '../../components/loader/loader'
 import Carousel from '../../components/carousel/carousel'
 import Infos from '../../components/infos/infos'
@@ -9,39 +10,37 @@ import Host from '../../components/host/host'
 import Rating from '../../components/rating/rating'
 import Collapse from '../../components/collapse/collapse'
 import Error from '../Error/404'
-
+// ASSETS
 import Styles from './logement.module.scss'
 
 function Logement() {
   //// FIND DATA ////
-  const dataLogements = Hooks()
   const { logementId } = useParams()
-  const currentLogement = dataLogements.find((data) => data.id === logementId)
+  const currentLogement = data.find((data) => data.id === logementId)
 
   // LOADING
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 1600);
-
-    return () => clearTimeout(timeout);
-  }, []);
+      setIsLoading(false)
+    }, 2000)
+    return () => clearTimeout(timeout)
+  }, [])
 
   // ERROR CHECK
-  const checkURL = currentLogement?.id
-  if (checkURL != logementId) {
+  if (currentLogement?.id != logementId) {
     return <Error />
   }
 
+  //RENDER
   return (
     <main className={Styles.logement}>
       {isLoading ? (
         <Loader />
       ) : (
-
         <>
           <Carousel pictures={currentLogement?.pictures} />
+
           <section className={Styles.logement_infos}>
             <Infos
               title={currentLogement?.title}
