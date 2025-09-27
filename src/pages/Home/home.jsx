@@ -7,7 +7,7 @@ import bannerImage from '../../assets/images/home-banner.jpg'
 import Styles from './home.module.scss'
 
 function Home() {
-  const logements = Hooks();
+  const logements = Hooks()
   const bannerTitle = ["Chez vous, ", "partout et ailleurs"]
 
   return (

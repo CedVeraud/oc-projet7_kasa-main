@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 // ASSETS
 import Styles from './card.module.scss'
 
-function card(props) {
+function Card(props) {
   const { id, thumb, title } = props
   //RENDER
   return (
@@ -16,4 +16,4 @@ function card(props) {
   )
 }
 
-export default card
+export default Card
