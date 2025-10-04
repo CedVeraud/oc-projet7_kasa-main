@@ -3,11 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 /***  GLOBAL RULES  ***/
-* {
-  font-family: "Montserrat", sans-serif;
-}
 
-body {
+.app {
+  font-family: "Montserrat", sans-serif;
   width: 100%;
   margin: 0;
   box-sizing: border-box;
@@ -15,21 +13,21 @@ body {
   background: variables.$primary-bg;
 }
 
-h1 {
+.app h1 {
   padding: 100px 0;
   font-size: 48px;
   font-weight: 700;
   text-align: center;
 }
 
-a,
-a:active,
-a:visited {
+.app a,
+.app a:active,
+.app a:visited {
   text-decoration: none;
   color: variables.$primary-txt-color;
 }
 
-ul {
+.app ul {
   margin: 0;
   padding: 0;
 }

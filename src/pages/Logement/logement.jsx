@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 // DATA
-import data from '../../utils/data/logements.json'
+import data from '../../data/logements.json'
 // COMPONENTS
 import Loader from '../../components/loader/loader'
 import Carousel from '../../components/carousel/carousel'

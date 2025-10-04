@@ -8,12 +8,15 @@ import About from './pages/About/about'
 import Logement from './pages/Logement/logement'
 import Error from './pages/Error/404'
 
+import Styles from './style/main.module.scss'
+
 function App() {
   return (
-    <div className="app">
+    <div className={Styles.app}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/logement/:logementId" element={<Logement />} />
         <Route path="*" element={<Error />} />

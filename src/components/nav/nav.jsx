@@ -8,7 +8,7 @@ function HeaderNav() {
       <ul>
         <li className={Styles.nav_link}>
           <NavLink
-            to="/"
+            to="/home"
             className={({ isActive }) => (isActive ? Styles.nav_link_isActive : Styles.nav_link_isNotActive)}
           >
             Accueil

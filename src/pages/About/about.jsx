@@ -10,7 +10,7 @@ function About() {
   // GET DATA
   const [about, setAbout] = useState([])
   useEffect(() => {
-    fetch('/src/utils/data/about.json')
+    fetch('/src/data/about.json')
       .then((res) => res.json())
       .then((res) => setAbout(res))
       .catch((err) => console.log('Erreur : ', err))

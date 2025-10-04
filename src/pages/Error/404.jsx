@@ -11,7 +11,7 @@ function Error() {
         <p className={Styles.error_text}>
           Oups! La page que vous demandez n'existe pas.
         </p>
-        <Link className={Styles.error_link} to="/">
+        <Link className={Styles.error_link} to="/home">
           Retourner sur la page d’accueil
         </Link>
       </section>

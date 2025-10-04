@@ -9,7 +9,7 @@ function Header() {
   return (
     <header className={Styles.header}>
       <div className={Styles.header_container}>
-        <Link to="/">
+        <Link to="/home">
           <img
             src={HeaderLogo}
             className={Styles.header_logo}
